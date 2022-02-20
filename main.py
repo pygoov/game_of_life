@@ -121,7 +121,6 @@ def main():
     pygame.init()
     pygame.display.set_caption("game of life")
 
-    # create a surface on screen that has the size of 240 x 180
     # win_size = (1920, 1080)
     win_size = (640, 480)
     window = pygame.display.set_mode(win_size)
@@ -132,15 +131,12 @@ def main():
     map = pygame.Surface(game_size)
 
     clock = pygame.time.Clock()
-    # x = 0
-    # main loop
+
     while True:
         dt = clock.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit(0)
-
-        # window.fill((0, 0, 0))
 
         game_map.update()
         arr = pygame.PixelArray(map)
